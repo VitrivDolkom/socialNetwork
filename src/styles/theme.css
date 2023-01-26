@@ -1,12 +1,25 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
 
-  --text: white;
+	--blue: #003B5A;
+	--yellow: #FFC225;
+	--white: #F7F0E1;
+	--orange: #FF6F3B;
+	--text: #333;
+	--hover-back: #e6decc;
+
+	color: var(--text);
+	background-color: var(--white);
 }
 
 
 .darkTheme {
-  --text: black;
+	--text: #f0f0f0;
+	--blue: #5887a0;
+	--yellow: #FFC225;
+	--white: #2c2006;
+	--hover-back: #463b25;
+	--orange: #FF6F3B;
 }

@@ -1,0 +1,17 @@
+.top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.data {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+.create {
+	display: flex;
+	margin-top: 30px;
+}

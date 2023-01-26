@@ -1,0 +1,25 @@
+.sidebar {
+	grid-area: sidebar;
+	border-right: var(--blue) 0.5px solid;
+	border-left: var(--blue) 0.5px solid;
+	padding: 10px 10px;
+}
+
+
+
+.item {
+	padding: 7px;
+	border-bottom: var(--blue) 2px solid;
+	font-size: 18px;
+	margin-top: 10px;
+	cursor: pointer;
+
+
+	@media screen and (min-width:($md2 + px)) {
+		transition: all $time linear;
+
+		&:hover {
+			background-color: var(--hover-back);
+		}
+	}
+}
