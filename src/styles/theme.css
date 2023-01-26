@@ -1,0 +1,12 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  --text: white;
+}
+
+
+.darkTheme {
+  --text: black;
+}
