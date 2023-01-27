@@ -1,15 +1,17 @@
 import { connect } from "react-redux";
-import { IPost } from "../../redux/reducers/profileReducer";
+import { addPost, changePostText, IAction } from "../../redux/actions";
+import { IPost, textType } from "../../redux/reducers/profileReducer";
 import { IState } from "../../redux/reduxStore";
 import Profile from "./Profile";
 
 
-export interface IProfileProps {
+
+export interface IProfileStateProps {
 	posts: IPost[],
-	enteredText: string | undefined
+	enteredText: textType
 }
 
-const mapStateToProps = (state: IState): IProfileProps => {
+const mapStateToProps = (state: IState): IProfileStateProps => {
 	return {
 		posts: state.profilePage.posts,
 		enteredText: state.profilePage.enteredText
@@ -17,7 +19,19 @@ const mapStateToProps = (state: IState): IProfileProps => {
 };
 
 
+export interface IProfileDispatchProps {
+	changeText: (text: string) => void,
+	addPost: () => void
+}
 
-const ProfileContainer = connect(mapStateToProps)(Profile);
+const mapDispatchToProps = (dispatch: (action: IAction) => void): IProfileDispatchProps => {
+	return {
+		changeText: (text: string) => dispatch(changePostText(text)),
+		addPost: () => dispatch(addPost())
+	};
+};
+
+
+const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);
 
 export default ProfileContainer;

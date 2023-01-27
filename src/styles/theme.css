@@ -1,14 +1,14 @@
 :root {
 	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 400;
 
-	--blue: #003B5A;
+	--blue: #329ddc;
 	--yellow: #FFC225;
 	--white: #F7F0E1;
 	--orange: #FF6F3B;
 	--text: #333;
-	--hover-back: #e6decc;
+	--hover-btn: #4dafe8;
 
 	color: var(--text);
 	background-color: var(--white);
@@ -17,9 +17,11 @@
 
 .darkTheme {
 	--text: #f0f0f0;
-	--blue: #5887a0;
+	--blue: #003B5A;
 	--yellow: #FFC225;
-	--white: #2c2006;
-	--hover-back: #463b25;
+	--white: #333;
+	--hover-btn: #002235;
 	--orange: #FF6F3B;
+	color: var(--text);
+	background-color: var(--white);
 }

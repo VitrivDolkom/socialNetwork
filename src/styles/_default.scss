@@ -26,6 +26,13 @@ button {
 	cursor: pointer;
 }
 
+button,
+button:active,
+button:focus {
+	border: none;
+}
+
+
 // /*zeroing*/
 
 

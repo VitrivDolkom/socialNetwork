@@ -1,11 +1,19 @@
 import React from "react";
+import { textType } from "../../redux/reducers/profileReducer";
 import s from "./style.module.scss";
 
+interface IProfileInfoProps {
+	changeText: (text: string) => void,
+	addPost: () => void,
+	text: textType
+}
 
-const ProfileInfo = () => {
+
+const ProfileInfo = (props: IProfileInfoProps) => {
 
 	const onCreatePost = (e: React.FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
+		props.addPost();
 	};
 
 	return (
@@ -17,8 +25,8 @@ const ProfileInfo = () => {
 
 			<div className={s.create}>
 				<form onSubmit={(e): void => onCreatePost(e)}>
-					<input />
-					<button type="submit">Create post</button>
+					<input value={props.text} onChange={(e) => props.changeText(e.target.value.toString())} />
+					<button type="submit" className="btn">Create post</button>
 				</form>
 			</div>
 		</div >

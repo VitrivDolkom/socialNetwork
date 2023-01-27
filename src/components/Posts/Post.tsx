@@ -1,10 +1,12 @@
 import React from "react";
-import { IPost } from "../../redux/reducers/profileReducer";
+import { textType } from "../../redux/reducers/profileReducer";
+import s from "./style.module.scss";
 
-const Post = ({ text }: { text: string }) => {
+const Post = ({ text }: { text: textType }) => {
 	return (
-		<li>
-			{text}
+		<li className={s.item}>
+			<span>{text}</span>
+			<button className={["btn", s.deletePost].join(" ")}>Delete post</button>
 		</li>
 	);
 };
