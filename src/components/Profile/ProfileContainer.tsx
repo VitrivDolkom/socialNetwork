@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { addPost, changePostText, IAction } from "../../redux/actions";
-import { IPost, textType } from "../../redux/reducers/profileReducer";
+import { addPost, changePostText, deletePost, IAction } from "../../redux/actions";
+import { IPost, payloadType } from "../../redux/reducers/profileReducer";
 import { IState } from "../../redux/reduxStore";
 import Profile from "./Profile";
 
@@ -8,7 +8,7 @@ import Profile from "./Profile";
 
 export interface IProfileStateProps {
 	posts: IPost[],
-	enteredText: textType
+	enteredText: payloadType
 }
 
 const mapStateToProps = (state: IState): IProfileStateProps => {
@@ -19,15 +19,20 @@ const mapStateToProps = (state: IState): IProfileStateProps => {
 };
 
 
+export type IDeletePost = (id: number) => void;
+
 export interface IProfileDispatchProps {
 	changeText: (text: string) => void,
-	addPost: () => void
+	addPost: () => void,
+	deletePost: IDeletePost
 }
 
-const mapDispatchToProps = (dispatch: (action: IAction) => void): IProfileDispatchProps => {
+
+const mapDispatchToProps = (dispatch: (action: IAction<payloadType>) => void): IProfileDispatchProps => {
 	return {
 		changeText: (text: string) => dispatch(changePostText(text)),
-		addPost: () => dispatch(addPost())
+		addPost: () => dispatch(addPost()),
+		deletePost: (id: number) => dispatch(deletePost(id))
 	};
 };
 

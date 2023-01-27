@@ -1,16 +1,16 @@
 import { IAction } from "../actions";
-import { ADD_POST, CHANGE_POST_TEXT } from "../actionTypes";
+import { ADD_POST, CHANGE_POST_TEXT, DELETE_POST } from "../actionTypes";
 
-export type textType = string | undefined;
+export type payloadType = string | undefined | number;
 
 export interface IPost {
 	id: number,
-	text: textType
+	text: payloadType
 }
 
 export interface IProfileState {
 	posts: IPost[],
-	enteredText: textType
+	enteredText: payloadType
 }
 
 const initialState: IProfileState = {
@@ -19,7 +19,7 @@ const initialState: IProfileState = {
 };
 
 
-const profileReducer = (state = initialState, action: IAction): IProfileState => {
+const profileReducer = (state = initialState, action: IAction<payloadType>): IProfileState => {
 
 	switch (action.type) {
 		case CHANGE_POST_TEXT:
@@ -38,6 +38,12 @@ const profileReducer = (state = initialState, action: IAction): IProfileState =>
 				...state,
 				posts: [{ id: Math.random(), text: state.enteredText }, ...state.posts],
 				enteredText: ""
+			};
+		case DELETE_POST:
+
+			return {
+				...state,
+				posts: [...state.posts.filter(post => post.id !== action.payload)],
 			};
 
 		default:

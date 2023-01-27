@@ -1,12 +1,17 @@
 import React from "react";
-import { textType } from "../../redux/reducers/profileReducer";
+import { IPost } from "../../redux/reducers/profileReducer";
+import { IDeletePost } from "../Profile/ProfileContainer";
 import s from "./style.module.scss";
 
-const Post = ({ text }: { text: textType }) => {
+interface IPostProps extends IPost {
+	deletePost: IDeletePost
+}
+
+const Post = (props: IPostProps) => {
 	return (
 		<li className={s.item}>
-			<span>{text}</span>
-			<button className={["btn", s.deletePost].join(" ")}>Delete post</button>
+			<span>{props.text}</span>
+			<button className={["btn", s.deletePost].join(" ")} onClick={() => props.deletePost(props.id)}>Delete post</button>
 		</li>
 	);
 };

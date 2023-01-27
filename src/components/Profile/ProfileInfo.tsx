@@ -1,11 +1,11 @@
 import React from "react";
-import { textType } from "../../redux/reducers/profileReducer";
+import { payloadType } from "../../redux/reducers/profileReducer";
 import s from "./style.module.scss";
 
 interface IProfileInfoProps {
 	changeText: (text: string) => void,
 	addPost: () => void,
-	text: textType
+	text: payloadType
 }
 
 

@@ -11,7 +11,7 @@ const Profile = (props: IProfileProps) => {
 	return (
 		<div className={s.profile}>
 			<ProfileInfo text={props.enteredText} addPost={props.addPost} changeText={props.changeText} />
-			<Posts posts={props.posts} />
+			<Posts posts={props.posts} deletePost={props.deletePost} />
 		</div>
 	);
 };
