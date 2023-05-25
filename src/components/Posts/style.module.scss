@@ -1,0 +1,22 @@
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+
+.item {
+	padding: 0 30px;
+	margin: 20px auto 0;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+
+
+	& span {
+		font-size: 20px;
+	}
+}
+
+.deletePost {
+	background-color: var(--orange);
+}

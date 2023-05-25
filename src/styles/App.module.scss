@@ -1,0 +1,21 @@
+.app {
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 1.7fr 10fr;
+	row-gap: 25px;
+
+	grid-template-areas:
+		"header header"
+		"sidebar content";
+
+	max-width: ($box_width + px);
+	margin: 0 auto;
+	background-color: var(--back);
+}
+
+.content {
+	grid-area: content;
+	text-align: center;
+}
