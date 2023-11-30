@@ -1,9 +1,14 @@
 import React from "react";
+import { useTodosQuery } from "./useTodosQuery";
 
 const Dialog = () => {
-	return (
-		<div>Dialog</div>
-	);
+	const todosQuery = useTodosQuery();
+
+	if (todosQuery.isLoading) {
+		return <div>Loading...</div>;
+	}
+
+	return <div>Dialog</div>;
 };
 
 export default Dialog;
