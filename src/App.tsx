@@ -7,7 +7,6 @@ import Navbar from "./components/Navbar/Navbar";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 import store from "./redux/reduxStore";
-
 import s from "./styles/App.module.scss";
 
 function App() {
